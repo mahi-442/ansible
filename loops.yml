@@ -1,0 +1,14 @@
+- hosts: 172.31.25.69
+  become: True
+  tasks:
+          - name: Install packages
+            yum:
+                    name: "{{ item }}"
+                    state: present
+            loop:
+                    - git
+                    - java  
+
+                
+
+
