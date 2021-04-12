@@ -1,0 +1,19 @@
+- hosts: all
+  become: True
+  tasks:
+          - name: create group for HUE members
+            group:
+                    name: HUE
+                    state: present
+
+          - name: create users for HUE
+            user:
+                    name: "{{ item.name }}"
+                    group: "{{ item.group }}"
+            loop:
+                    - {name: Mahesh, group: HUE}
+                    - {name: sudheer, group: HUE}  
+                                    
+
+
+
