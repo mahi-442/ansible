@@ -1,0 +1,12 @@
+- hosts: all
+  become: True
+  tasks:
+          - name: reusing ansible playbooks
+            debug:
+                    msg: Installing Git and Apache
+
+- name: Import git.yml
+  import_playbook: git.yml
+
+- name: Import apache.yml
+  import_playbook: apache.yml
