@@ -1,0 +1,13 @@
+- name: inatall docker
+  yum:
+          name: docker
+          state: present
+
+- name: start docker demon
+  service:
+          name: docker
+          state: started
+          enabled: yes
+
+
+
